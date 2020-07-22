@@ -6,6 +6,6 @@ namespace LCM
 {
     public interface ILCMcalculate
     {
-        long calculateLCMofTwoNumber(long numberA, long numberB);
+        long CalculateLCMofTwoNumber(long numberA, long numberB);
     }
 }

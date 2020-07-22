@@ -6,6 +6,6 @@ namespace GCD
 {
     public interface IGCDcalculate
     {
-        long calculateGCDofTwoNumber(long numberA, long numberB);
+        long CalculateGCDofTwoNumber(long numberA, long numberB);
     }
 }

@@ -11,7 +11,7 @@ namespace XUnitTest
         public void CalculateGCDofTwoNumberTest(long numberA, long numberB, long expected)
         {
             var sut = new GCD.GCDcalculate();
-            var actual = sut.calculateGCDofTwoNumber(numberA, numberB);
+            var actual = sut.CalculateGCDofTwoNumber(numberA, numberB);
             Assert.Equal(expected, actual);
         }
 
@@ -22,7 +22,7 @@ namespace XUnitTest
         public void CalculateLCMofTwoNumberTest(long numberA, long numberB, long expected)
         {
             var sut = new LCM.LCMcalculate();
-            var actual = sut.calculateLCMofTwoNumber(numberA, numberB);
+            var actual = sut.CalculateLCMofTwoNumber(numberA, numberB);
             Assert.Equal(expected, actual);
         }
     }

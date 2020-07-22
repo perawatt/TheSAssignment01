@@ -32,7 +32,7 @@ namespace LCM.console
                     Console.WriteLine("Wrong input !");
                 }
             }
-            var result = svc.calculateLCMofTwoNumber(numbers[0], numbers[1]);
+            var result = svc.CalculateLCMofTwoNumber(numbers[0], numbers[1]);
             Console.WriteLine($"Least common multiple of {numbers[0]} and {numbers[1]} is : {result}");
             Console.ReadKey();
         }

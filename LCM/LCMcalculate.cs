@@ -4,10 +4,10 @@ namespace LCM
 {
     public class LCMcalculate : ILCMcalculate
     {
-        public long calculateLCMofTwoNumber(long numberA, long numberB)
+        public long CalculateLCMofTwoNumber(long numberA, long numberB)
         {
             var gcdSvc = new GCD.GCDcalculate();
-            var gcd = gcdSvc.calculateGCDofTwoNumber(numberA, numberB);
+            var gcd = gcdSvc.CalculateGCDofTwoNumber(numberA, numberB);
             return (numberA * numberB) / gcd;
         }
     }

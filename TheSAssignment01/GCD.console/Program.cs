@@ -32,7 +32,7 @@ namespace GCD.console
                     Console.WriteLine("Wrong input !");
                 }
             }
-            var result = svc.calculateGCDofTwoNumber(numbers[0], numbers[1]);
+            var result = svc.CalculateGCDofTwoNumber(numbers[0], numbers[1]);
             Console.WriteLine($"Greatest common divisor of {numbers[0]} and {numbers[1]} is : {result}");
             Console.ReadKey();
         }
