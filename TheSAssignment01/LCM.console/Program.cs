@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GCD.console
+namespace LCM.console
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var svc = new GCDcalculate();
+            var svc = new LCMcalculate();
             List<long> numbers = new List<long>();
-            Console.WriteLine("Greatest common divisor calculator");
+            Console.WriteLine("Least common multiple calculator");
             Console.WriteLine("Please insert two numbers:");
             while (numbers.Count < 2)
             {
@@ -32,8 +32,8 @@ namespace GCD.console
                     Console.WriteLine("Wrong input !");
                 }
             }
-            var result = svc.calculateGCDofTwoNumber(numbers[0], numbers[1]);
-            Console.WriteLine($"Greatest common divisor of {numbers[0]} and {numbers[1]} is : {result}");
+            var result = svc.calculateLCMofTwoNumber(numbers[0], numbers[1]);
+            Console.WriteLine($"Least common multiple of {numbers[0]} and {numbers[1]} is : {result}");
             Console.ReadKey();
         }
     }
