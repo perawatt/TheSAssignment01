@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\GCD\GCD.csproj" />
     <ProjectReference Include="..\..\LCM\LCM.csproj" />
+    <ProjectReference Include="..\TruthTable\TruthTable.csproj" />
   </ItemGroup>
 
 </Project>
