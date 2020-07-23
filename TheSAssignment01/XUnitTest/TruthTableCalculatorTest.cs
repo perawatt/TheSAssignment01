@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FluentAssertions;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xunit;
 
@@ -25,9 +27,11 @@ namespace XUnitTest
         };
         [MemberData(nameof(posibilityTruthTable))]
         [Theory]
-        public void CalculateAndOperation(IEnumerable<string> stringSet, IEnumerable<IEnumerable<string>> expected)
+        public void CalculateAndOperation(string operationstring, IEnumerable<string> stringSet, IEnumerable<IEnumerable<string>> expected)
         {
             var sut = new TruthTable.TruthTableCalculator();
+            var actual = sut.GetTruthTable(operationstring,stringSet.ToArray());
+            Assert.Equal(expected, actual);
         }
     }
 }
