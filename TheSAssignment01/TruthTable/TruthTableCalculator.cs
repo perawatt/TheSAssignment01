@@ -6,21 +6,33 @@ namespace TruthTable
 {
     public class TruthTableCalculator
     {
-        public IEnumerable<IEnumerable<string>> GetTruthTable(string stringOperation,IEnumerable<string> stringSet)
+        public IEnumerable<IEnumerable<string>> GetTruthTable(IEnumerable<string> stringSet)
         {
             List<List<string>> truthtable = new List<List<string>> { };
-            var loopRound = stringSet.ToList().Count()^2;
-            for (int i = 0; i < loopRound; i++)
+            var pow = Convert.ToInt32(Math.Pow(stringSet.Count(),2));
+            var loopRound = pow == 1 ? 2 : pow;
+            for (int i = loopRound - 1; i >= 0; i--)
             {
-
-            }
-            return new List<List<string>>
+                List<string> currentRow = new List<string> { };
+                string binary = Convert.ToString(i, 2);
+                if(binary.Length == 1)
                 {
-                    new List<string> {"T","T","T"},
-                    new List<string> {"T","F","F"},
-                    new List<string> {"F","T","F"},
-                    new List<string> {"F","F","F"}
-                };
+                    binary = binary.Insert(0, "0");
+                }
+                foreach (char ch in binary.ToCharArray())
+                {
+                    if(ch == '0')
+                    {
+                        currentRow.Add("F");
+                    }
+                    else
+                    {
+                        currentRow.Add("T");
+                    }
+                }
+                truthtable.Add(currentRow);
+            }
+            return truthtable;
         }
     }
 }
