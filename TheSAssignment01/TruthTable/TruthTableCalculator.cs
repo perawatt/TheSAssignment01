@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace TruthTable
 {
@@ -50,6 +51,32 @@ namespace TruthTable
                 truthtable.Add(currentRow);
             }
             return truthtable;
+        }
+
+        public string DisplayTable(string operation, IEnumerable<IEnumerable<string>> truthtable, IEnumerable<string> stringSet)
+        {
+            var stringAndOperation = stringSet.ToList();
+            stringAndOperation.Add(operation);
+
+            StringBuilder sb = new StringBuilder();
+            var line = "|";
+
+            foreach (var header in stringAndOperation)
+            {
+                var Startspace = header.Length <= 2 ? 2 : 1;
+                sb.Append($"{new string(' ', Startspace)}{header}{new string(' ', 1)}");
+            };
+            sb.Append(Environment.NewLine);
+            foreach (var row in truthtable)
+            {
+                foreach (var item in row)
+                {
+                    sb.Append($"{line} {item}{new string(' ', 1)}");
+                }
+                sb.Append(line);
+                sb.Append(Environment.NewLine);
+            };
+            return sb.ToString();
         }
 
         private string GetResult(string operation, IEnumerable<string> truthtable)
